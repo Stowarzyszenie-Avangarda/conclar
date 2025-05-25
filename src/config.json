@@ -1,7 +1,7 @@
 {
   "BASE_PATH": "/program",
-  "APP_ID": "bazyl2024",
-  "APP_TITLE": "Program - Bazyliszek 2024",
+  "APP_ID": "bazyl2025",
+  "APP_TITLE": "Program - Bazyliszek 2025",
   "PROGRAM_DATA_URL": "/program/program.js",
   "PEOPLE_DATA_URL": "/program/people.js",
   "FETCH_OPTIONS": {
@@ -80,7 +80,7 @@
     "HIDE": false,
     "SEPARATE": [
       { "PREFIX": "type", "PLACEHOLDER": "Wybierz typ", "SEARCHABLE": true, "HIDE": false },
-      { "PREFIX": "test", "PLACEHOLDER": "Wybierz test", "SEARCHABLE": true, "HIDE": false }
+      { "PREFIX": "block", "PLACEHOLDER": "Wybierz blok", "SEARCHABLE": false, "HIDE": false }
     ],
     "FORMAT_AS_TAG": false,
     "DAY_TAG": {

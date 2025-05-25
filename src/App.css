@@ -22,14 +22,14 @@
 
 
 :root {
-  --main-bg: #fff;
+  --main-bg: #f9fafa;
   --main-fg: #000;
-  --navigation-button-bg: #8ed1fc;
-  --navigation-button-bg-gradient: linear-gradient(135deg,rgb(100,204,244) 0%,rgb(169,208,121) 100%);
+  --navigation-button-bg: #0A3E92;
+  --navigation-button-bg-gradient: linear-gradient(135deg,#0A3E92 0%,rgb(169,208,121) 100%);
   --navigation-button-fg: #fff; /*#0d172a;*/
   --navigation-button-border: #e2e8f0;
-  --navigation-button-current-bg: #0693e3; /*#525e73; #343c4b;*/
-  --navigation-button-current-bg-gradient: linear-gradient(135deg,rgb(169,208,121) 0%,rgb(100,204,244) 100%); /*#525e73; #343c4b;*/
+  --navigation-button-current-bg: #0A3E92; /*#525e73; #343c4b;*/
+  --navigation-button-current-bg-gradient: linear-gradient(135deg,rgb(169,208,121) 0%, #0A3E92 100%); /*#525e73; #343c4b;*/
   --navigation-button-current-fg: #fff;
   --navigation-button-hover-bg: #0693e3;
   --navigation-button-hover-fg: #fff;
@@ -39,7 +39,7 @@
   --filter-bg: var(--main-bg);
   --filter-fg: var(--main-fg);
   --filter-border: var(--search-border);
-  --filter-select-bg: #8ed1fc;
+  --filter-select-bg: #0A3E92;
   --filter-select-fg: #000;
   --search-bg: var(--main-bg);
   --search-fg: var(--main-fg);
@@ -50,23 +50,23 @@
   --reset-button-hover-fg: var(--navigation-button-fg);
   --expand-button-bg: var(--navigation-button-current-bg);
   --expand-button-fg: var(--navigation-button-current-fg);
-  --expand-button-hover-bg: var(--navigation-button-bg);
+  --expand-button-hover-bg: var(--navigation-button-hover-bg);
   --expand-button-hover-fg: var(--navigation-button-fg);
   --add-all-button-bg: var(--navigation-button-current-bg);
   --add-all-button-fg: var(--navigation-button-current-fg);
   --add-more-button-bg: var(--navigation-button-current-bg);
   --add-more-button-fg: var(--navigation-button-current-fg);
   --program-item-chevron-collapsed: #ccc;
-  --program-item-chevron-expanded: #8ed1fc;
-  --program-time-convention-message: #8ed1fc;
-  --program-time-local-message: #8ed1fc;
+  --program-item-chevron-expanded: #0A3E92;
+  --program-time-convention-message: #0A3E92;
+  --program-time-local-message: #0A3E92;
   --program-date-line: #888;
   --program-time-line: #ccc;
   --program-item-line: #bbb;
   --program-time-bg: #ddd;
   --program-tags-fg: #555;
   --program-expanded-bg: #eee;
-  --permalink-icon-fg: #8ed1fc;
+  --permalink-icon-fg: #0A3E92;
   --permalink-icon-hover-fg: #0693e3;
   --participant-bg: #eee;
   --participant-link-fg: #000;
@@ -80,9 +80,9 @@
   --shadow-03: rgba(0, 0, 0, 0.3);
   --shadow-gray: rgba(166, 175, 195, 0.25);
   --debug-online-bg: green;
-  --debug-online-fg: white;
+  --debug-online-fg: #f9fafa;
   --debug-offline-bg: red;
-  --debug-offline-fg: white;
+  --debug-offline-fg: #f9fafa;
 }
 
 img {
@@ -183,7 +183,7 @@ header img {
   font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1;
   padding: 1rem 1.5rem;
@@ -200,8 +200,8 @@ header img {
 }
 
 .navigation li a.active {
-  background: var(--navigation-button-current-bg-gradient);
-  background-color: var(--navigation-button-current-bg);
+  background: var(--navigation-button-hover-bg);
+  background-color: var(--navigation-button-hover-bg);
   color: var(--navigation-button-current-fg);
   border: var(--navigation-button-current-bg);
   border-width: 5px;
@@ -209,7 +209,7 @@ header img {
 
 .navigation li a:hover,
 .navigation li a.active:hover {
-  background: var(--navigation-button-bg-gradient);
+  background: var(--navigation-button-hover-bg);
   /*background-color: var(--navigation-button-hover-bg);*/
   color: var(--navigation-button-hover-fg);
 }
@@ -529,7 +529,7 @@ input.switch:checked ~ label:after {
 
 .time-convention-message {
   font-weight: bold;
-  color: var(--program-time-convention-message);
+  /*color: var(--program-time-convention-message);*/
 }
 
 .time-local-message {
