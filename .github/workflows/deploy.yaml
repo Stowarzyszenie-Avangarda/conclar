@@ -39,3 +39,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build/
           server-dir: /bazyliszek/program/
+          dangerous-clean-slate: true
