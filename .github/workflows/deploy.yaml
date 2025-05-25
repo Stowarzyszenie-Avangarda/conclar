@@ -1,0 +1,42 @@
+name: website
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository
+      - uses: actions/checkout@v4
+
+      # Set up Node.js environment for building ConClár
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Use the Node.js version compatible with ConClár
+
+      # Install ConClár dependencies
+      - name: Install ConClár dependencies
+        run: |
+          CI=false npm ci
+
+      # Build ConClár
+      - name: Build ConClár
+        run: |
+          CI=false npm run build
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build/
+          server-dir: /bazyliszek/program/
+          dangerous-clean-slate: true
