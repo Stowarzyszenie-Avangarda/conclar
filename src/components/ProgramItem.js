@@ -13,6 +13,9 @@ import Participant from "./Participant";
 import configData from "../config.json";
 import PropTypes from "prop-types";
 import EcoTwoToneIcon from '@material-ui/icons/EcoTwoTone';
+import NotAccessibleIcon from '@mui/icons-material/NotAccessible';
+import TranslateIcon from '@mui/icons-material/Translate';
+import HandshakeIcon from '@mui/icons-material/Handshake';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
@@ -104,7 +107,12 @@ const ProgramItem = ({ item, forceExpanded }) => {
     });
   }
 
-  const greenLeaf = item.green_leaf == true ? <EcoTwoToneIcon fontSize="large" htmlColor="green" /> : '';
+  const iconColor = '--green-leaf-fill'; // Define a CSS variable
+
+  const greenLeaf = item.green_leaf == true ? <EcoTwoToneIcon alt="Punkt przyjazny dla osób, które nigdy nie były na konwencie" fontSize="large" style={{ color: `var(${iconColor})`}} /> : '';
+  const access = item.handicap_friendly != true ? <NotAccessibleIcon alt ="Punkt prowadzony w miejscu z utrudnionym dostępem dla osób z niepełnosprawnością ruchową" fontSize="large" /> : '';
+  const sponsor = item.sponsored == true ? <HandshakeIcon alt="Punkt prowadzony przez jednego z naszych sponsorów" fontSize="large" /> : '';
+  const translation = item.translated == true ? <TranslateIcon alt="Punkt tłumaczony symultanicznie z języka angielskiego" fontSize="large" /> : '';
   const keywords = item.keywords !== '' ? <div className="item-tags"> <b>{'Słowa kluczowe: '}</b>  {item.keywords}</div> : "";
   const ageRestrictions = item.age_restrictions !== '' ? <div className="item-tags"><b>{'Ograniczenia wiekowe: '}</b>  {item.age_restrictions}</div> : "";
   const triggers = item.triggers !== '' ? <div className="item-tags"><b>{'Triggery: '}</b>  {item.triggers}</div> : "";
@@ -169,8 +177,11 @@ const ProgramItem = ({ item, forceExpanded }) => {
           <div className="item-title">
             {chevron}
             <Stack alignItems="center" direction="row">
+            {item.title}
               {greenLeaf}
-              {item.title}
+              {access}
+              {sponsor}
+              {translation}
             </Stack>
           </div>
           <div className="item-line2">

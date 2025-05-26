@@ -8,7 +8,10 @@ import ProgramList from "./ProgramList";
 import ShowPastItems from "./ShowPastItems";
 import ShowOnlyBegginerFriendlyItems from "./ShowOnlyBegginerFriendlyItems";
 import { LocalTime } from "../utils/LocalTime";
-import EcoTwoToneIcon from '@material-ui/icons/EcoTwoTone';
+import EcoTwoToneIcon from "@material-ui/icons/EcoTwoTone";
+import NotAccessibleIcon from "@mui/icons-material/NotAccessible";
+import TranslateIcon from "@mui/icons-material/Translate";
+import { Handshake } from "@mui/icons-material";
 
 const FilterableProgram = () => {
   const program = useStoreState((state) => state.program);
@@ -16,13 +19,16 @@ const FilterableProgram = () => {
   const tags = useStoreState((state) => state.tags);
 
   const showPastItems = useStoreState((state) => state.showPastItems);
-  const showOnlyBeginnerFriendlyItems = useStoreState((state) => state.showOnlyBeginnerFriendlyItems);
+  const showOnlyBeginnerFriendlyItems = useStoreState(
+    (state) => state.showOnlyBeginnerFriendlyItems
+  );
   const { expandAll, collapseAll } = useStoreActions((actions) => ({
     expandAll: actions.expandAll,
     collapseAll: actions.collapseAll,
   }));
   const noneExpanded = useStoreState((state) => state.noneExpanded);
   const allExpanded = useStoreState((state) => state.allExpanded);
+  const iconColor = '--green-leaf-fill'; // Define a CSS variable
 
   const selLoc = useStoreState((state) => state.programSelectedLocations);
   const setSelLoc = useStoreActions(
@@ -276,15 +282,54 @@ const FilterableProgram = () => {
           </div>
         </div>
       </div>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-      }}>
-        {'Punkty oznaczone '}
-        <EcoTwoToneIcon fontSize="large" htmlColor="green" />
-        {' są przyjazne dla osób, które nigdy nie były na konwencie.'}
-      </div>
+      <div>{"Legenda oznaczeń przy naszych punktach programu"}</div>
+      <ul
+        style={{
+          listStyleType: "none",
+        }}
+      >
+        <li
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <EcoTwoToneIcon fontSize="large" style={{ color: `var(${iconColor})`}} />
+          {"punkty przyjazne dla osób, które nigdy nie były na konwencie."}
+        </li>
+        <li
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <NotAccessibleIcon fontSize="large" />
+          {"punkty prowadzone w miejscu z utrudnionym dostępem dla osób z niepełnosprawnością ruchową."}
+        </li>
+        <li
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <TranslateIcon fontSize="large" />
+          {"punkty tłumaczone symultanicznie z języka angielskiego."}
+        </li>
+        <li
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <Handshake fontSize="large" />
+          {"punkty prowadzone przez naszych sponsorów."}
+        </li>
+      </ul>
+
       <div className="program-page">
         <ProgramList program={display} />
       </div>

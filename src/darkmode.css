@@ -7,13 +7,13 @@
   --main-bg: #444;
   --main-fg: #fff;
   --navigation-button-bg: var(--accent-green);
-  --navigation-button-bg-gradient: #a2a3a5;/*linear-gradient(135deg,rgb(199, 208, 121) 0%,rgb(128, 182, 128) 100%); /*#525e73; #343c4b;*/
+  --navigation-button-bg-gradient: #848586;/*linear-gradient(135deg,rgb(199, 208, 121) 0%,rgb(128, 182, 128) 100%); /*#525e73; #343c4b;*/
   --navigation-button-fg: #000;
   --navigation-button-border: #e2e8f0;
   --navigation-button-current-bg: var(--accent-green); /*#525e73; #343c4b;*/
-  --navigation-button-current-bg-gradient: #a2a3a5;/* linear-gradient(135deg,rgb(128, 182, 128) 0%,rgb(199, 208, 121) 100%); /*#525e73; #343c4b;*/
+  --navigation-button-current-bg-gradient: #848586;/* linear-gradient(135deg,rgb(128, 182, 128) 0%,rgb(199, 208, 121) 100%); /*#525e73; #343c4b;*/
   --navigation-button-current-fg: #fff;
-  --navigation-button-hover-bg: #a2a3a5;
+  --navigation-button-hover-bg: #848586;
   --navigation-button-hover-fg: #fff;
   --checkbox-switch-bg: #444;
 
@@ -39,7 +39,10 @@
   --participant-link-fg: #eee;
   --participant-link-visited-fg: #ccc;
   --expand-button-hover-bg: #e2e8f0;
-
+  --green-leaf-fill: rgb(36, 218, 36);
+  --reset-button-fg: #000;
+  --reset-button-hover-bg: #848586;
+  --reset-button-hover-fg: #fff;
 }
 
 .filter-expand button {

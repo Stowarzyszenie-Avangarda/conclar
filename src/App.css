@@ -31,7 +31,7 @@
   --navigation-button-current-bg: #0A3E92; /*#525e73; #343c4b;*/
   --navigation-button-current-bg-gradient: linear-gradient(135deg,rgb(169,208,121) 0%, #0A3E92 100%); /*#525e73; #343c4b;*/
   --navigation-button-current-fg: #fff;
-  --navigation-button-hover-bg: #0693e3;
+  --navigation-button-hover-bg: #0979b9;
   --navigation-button-hover-fg: #fff;
   --checkbox-switch-bg: white;
   --checkbox-selected-bg: var(--navigation-button-hover-bg);
@@ -40,7 +40,7 @@
   --filter-fg: var(--main-fg);
   --filter-border: var(--search-border);
   --filter-select-bg: #0A3E92;
-  --filter-select-fg: #000;
+  --filter-select-fg: #fff;
   --search-bg: var(--main-bg);
   --search-fg: var(--main-fg);
   --search-border: hsl(0, 0%, 80%);
@@ -83,6 +83,7 @@
   --debug-online-fg: #f9fafa;
   --debug-offline-bg: red;
   --debug-offline-fg: #f9fafa;
+  --green-leaf-fill: green;
 }
 
 img {
@@ -212,6 +213,10 @@ header img {
   background: var(--navigation-button-hover-bg);
   /*background-color: var(--navigation-button-hover-bg);*/
   color: var(--navigation-button-hover-fg);
+}
+
+li .MuiSvgIcon-root{
+  margin-right: 1rem;
 }
 
 @media (max-width: 768px) {

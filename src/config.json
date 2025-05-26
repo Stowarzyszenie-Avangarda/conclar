@@ -47,7 +47,7 @@
       "LABEL": "Liczba wyświetlanych atrakcji",
       "OPTIONS": [50, 100, 250, 500, 1000],
       "ALL_LABEL": "Pokaż wszystko",
-      "DEFAULT": 250,
+      "DEFAULT": 500,
       "SHOW_MORE": {
         "LABEL": "Pokaż więcej",
         "NO_MORE": "Więcej nie znaleziono.",
