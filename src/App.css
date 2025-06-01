@@ -270,6 +270,7 @@ div.switch-wrapper {
 }
 div.switch-wrapper label {
   max-height: 2em;
+  word-break:break-all;
 }
 
 div.switch-wrapper,
@@ -327,6 +328,7 @@ input.switch:empty ~ label:after {
 
 input.switch:checked ~ label:before {
   background-color: var(--checkbox-selected-bg);
+  max-height: 1.5em;
 }
 
 input.switch:checked ~ label:after {
@@ -345,6 +347,10 @@ input.switch:checked ~ label:after {
   margin-bottom: 1rem;
 }
 
+.search-filters {
+  margin-bottom: 0;
+}
+
 .stack {
   display: flex;
   flex-direction: column;
@@ -361,8 +367,8 @@ input.switch:checked ~ label:after {
 .filter-locations,
 .filter-search,
 .filter-options {
-  flex-basis: 0;
-  flex-grow: 1;
+  /*flex-basis: 0;*/
+  flex-grow: 0.5;
   margin: 0.25em;
 }
 
@@ -372,6 +378,12 @@ input.switch:checked ~ label:after {
   font-size: 0.8em;
   min-width: 20ch;
   max-width: 50ch;
+}
+
+.filter-search {
+  display: block;
+  max-width: 100%;
+  padding: 0 0.25em;
 }
 
 .filter-search label {
@@ -423,6 +435,7 @@ input.switch:checked ~ label:after {
 .filter-search input,
 .people-search input
 {
+  width:100%;
   font-size: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -447,7 +460,6 @@ input.switch:checked ~ label:after {
   white-space: nowrap;
 }
 
-.filter-search,
 .people-search {
   max-width: 30ch;
   margin: auto 0.25em;

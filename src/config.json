@@ -27,7 +27,7 @@
   },
   "NAVIGATION": {
     "PROGRAM": "Program",
-    "PEOPLE": "Prowadzący",
+    "PEOPLE": "Os. prowadzące",
     "MYSCHEDULE": "Mój harmonogram",
     "INFO": "Punkt info",
     "SETTINGS": "Ustawienia",
@@ -79,6 +79,7 @@
     "SEARCHABLE": false,
     "HIDE": false,
     "SEPARATE": [
+      { "PREFIX": "place", "PLACEHOLDER": "Wybierz budynek", "SEARCHABLE": true, "HIDE": false },
       { "PREFIX": "type", "PLACEHOLDER": "Wybierz typ", "SEARCHABLE": true, "HIDE": false },
       { "PREFIX": "block", "PLACEHOLDER": "Wybierz blok", "SEARCHABLE": false, "HIDE": false }
     ],

@@ -8,6 +8,7 @@ import PersonLinks from "./PersonLinks";
 import ProgramList from "./ProgramList";
 import Tag from "./Tag";
 import configData from "../config.json";
+import Legend from "./Legend";
 
 const Person = () => {
   const navigate = useNavigate();
@@ -62,6 +63,7 @@ const Person = () => {
       />
       <PersonLinks person={person} />
       <ProgramList program={filteredProgram} />
+      <Legend />
     </div>
   );
 };

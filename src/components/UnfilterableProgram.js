@@ -3,6 +3,7 @@ import { useStoreState } from "easy-peasy";
 import ProgramList from "./ProgramList";
 import Info from "./Info";
 import { LocalTime } from "../utils/LocalTime";
+import Legend from "./Legend";
 
 const UnfilterableProgram = () => {
   const program = useStoreState((state) => state.program);
@@ -19,6 +20,7 @@ const UnfilterableProgram = () => {
       <div className="program-page">
         <ProgramList program={filtered} />
       </div>
+      <Legend />
       <hr />
       <Info />
     </div>

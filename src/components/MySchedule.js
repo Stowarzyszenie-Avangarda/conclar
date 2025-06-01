@@ -4,6 +4,7 @@ import ProgramList from "./ProgramList";
 import ShowPastItems from "./ShowPastItems";
 import ShareLink from "./ShareLink";
 import { LocalTime } from "../utils/LocalTime";
+import Legend from "./Legend";
 
 const MySchedule = () => {
   const mySchedule = useStoreState((state) => state.getMySchedule);
@@ -42,6 +43,7 @@ const MySchedule = () => {
         </div>
       </div>
       <ProgramList program={filtered} />
+      <Legend />
       <ShareLink />
     </div>
   );

@@ -18,6 +18,7 @@ import TranslateIcon from '@mui/icons-material/Translate';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { Tooltip } from "@mui/material";
 
 const ProgramItem = ({ item, forceExpanded }) => {
   const selected = useStoreState((state) => state.isSelected(item.id));
@@ -109,10 +110,10 @@ const ProgramItem = ({ item, forceExpanded }) => {
 
   const iconColor = '--green-leaf-fill'; // Define a CSS variable
 
-  const greenLeaf = item.green_leaf == true ? <EcoTwoToneIcon alt="Punkt przyjazny dla osób, które nigdy nie były na konwencie" fontSize="large" style={{ color: `var(${iconColor})`}} /> : '';
-  const access = item.handicap_friendly != true ? <NotAccessibleIcon alt ="Punkt prowadzony w miejscu z utrudnionym dostępem dla osób z niepełnosprawnością ruchową" fontSize="large" /> : '';
-  const sponsor = item.sponsored == true ? <HandshakeIcon alt="Punkt prowadzony przez jednego z naszych sponsorów" fontSize="large" /> : '';
-  const translation = item.translated == true ? <TranslateIcon alt="Punkt tłumaczony symultanicznie z języka angielskiego" fontSize="large" /> : '';
+  const greenLeaf = item.green_leaf == true ? <Tooltip title={<span style={{fontSize: "1rem"}}>Punkt przyjazny dla osób, które nigdy nie były na konwencie</span>} placement="top" arrow><EcoTwoToneIcon fontSize="large" style={{ color: `var(${iconColor})`}} /> </Tooltip>: '';
+  const access = item.handicap_friendly != true ? <Tooltip title={<span style={{fontSize: "1rem"}}>Punkt prowadzony w&nbsp;miejscu z&nbsp;utrudnionym dostępem dla osób z&nbsp;niepełnosprawnością ruchową</span>} placement="top" arrow><NotAccessibleIcon fontSize="large" /> </Tooltip>: '';
+  const sponsor = item.sponsored == true ? <Tooltip title={<span style={{fontSize: "1rem"}}>Punkt prowadzony przez jednego z&nbsp;naszych sponsorów</span>} placement="top" arrow><HandshakeIcon fontSize="large" /> </Tooltip>: '';
+  const translation = item.translated == true ? <Tooltip title={<span style={{fontSize: "1rem"}}>Punkt tłumaczony symultanicznie z&nbsp;języka angielskiego</span>} placement="top" arrow><TranslateIcon fontSize="large" /> </Tooltip> : '';
   const keywords = item.keywords !== '' ? <div className="item-tags"> <b>{'Słowa kluczowe: '}</b>  {item.keywords}</div> : "";
   const ageRestrictions = item.age_restrictions !== '' ? <div className="item-tags"><b>{'Ograniczenia wiekowe: '}</b>  {item.age_restrictions}</div> : "";
   const triggers = item.triggers !== '' ? <div className="item-tags"><b>{'Triggery: '}</b>  {item.triggers}</div> : "";

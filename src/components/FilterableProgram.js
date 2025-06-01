@@ -8,10 +8,7 @@ import ProgramList from "./ProgramList";
 import ShowPastItems from "./ShowPastItems";
 import ShowOnlyBegginerFriendlyItems from "./ShowOnlyBegginerFriendlyItems";
 import { LocalTime } from "../utils/LocalTime";
-import EcoTwoToneIcon from "@material-ui/icons/EcoTwoTone";
-import NotAccessibleIcon from "@mui/icons-material/NotAccessible";
-import TranslateIcon from "@mui/icons-material/Translate";
-import { Handshake } from "@mui/icons-material";
+import Legend from "./Legend";
 
 const FilterableProgram = () => {
   const program = useStoreState((state) => state.program);
@@ -28,7 +25,6 @@ const FilterableProgram = () => {
   }));
   const noneExpanded = useStoreState((state) => state.noneExpanded);
   const allExpanded = useStoreState((state) => state.allExpanded);
-  const iconColor = '--green-leaf-fill'; // Define a CSS variable
 
   const selLoc = useStoreState((state) => state.programSelectedLocations);
   const setSelLoc = useStoreActions(
@@ -221,7 +217,7 @@ const FilterableProgram = () => {
         <div className="search-filters">
           <div className="filter-locations">
             <ReactSelect
-              placeholder="Wybierz miejsce"
+              placeholder="Wybierz salę"
               options={locations}
               isMulti
               isSearchable={configData.LOCATIONS.SEARCHABLE}
@@ -241,22 +237,19 @@ const FilterableProgram = () => {
             tagConfig={configData.TAGS}
             resetLimit={resetDisplayLimit}
           />
-          <div className="filter-search">
-            <label htmlFor="search">Search</label>
-            <input
-              id="search"
-              type="search"
-              placeholder={configData.PROGRAM.SEARCH.SEARCH_LABEL}
-              value={search}
-              onChange={(e) => {
-                resetDisplayLimit();
-                setSearch(e.target.value);
-              }}
-            />
-          </div>
-          <div className="filter-options">
-            <ShowOnlyBegginerFriendlyItems />
-          </div>
+        </div>
+        <div className="filter-search">
+          <label htmlFor="search">Search</label>
+          <input
+            id="search"
+            type="search"
+            placeholder={configData.PROGRAM.SEARCH.SEARCH_LABEL}
+            value={search}
+            onChange={(e) => {
+              resetDisplayLimit();
+              setSearch(e.target.value);
+            }}
+          />
         </div>
         <div className="reset-filters">
           <ResetButton
@@ -264,6 +257,7 @@ const FilterableProgram = () => {
             resetFilters={resetLimitsAndFilters}
           />
         </div>
+
         {limitDropDown()}
         <div className="result-filters">
           <div className="stack">
@@ -279,56 +273,12 @@ const FilterableProgram = () => {
           </div>
           <div className="filter-options">
             <ShowPastItems />
+            <ShowOnlyBegginerFriendlyItems />
           </div>
         </div>
       </div>
-      <div>{"Legenda oznaczeń przy naszych punktach programu"}</div>
-      <ul
-        style={{
-          listStyleType: "none",
-        }}
-      >
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <EcoTwoToneIcon fontSize="large" style={{ color: `var(${iconColor})`}} />
-          {"punkty przyjazne dla osób, które nigdy nie były na konwencie."}
-        </li>
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <NotAccessibleIcon fontSize="large" />
-          {"punkty prowadzone w miejscu z utrudnionym dostępem dla osób z niepełnosprawnością ruchową."}
-        </li>
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <TranslateIcon fontSize="large" />
-          {"punkty tłumaczone symultanicznie z języka angielskiego."}
-        </li>
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <Handshake fontSize="large" />
-          {"punkty prowadzone przez naszych sponsorów."}
-        </li>
-      </ul>
+
+      <Legend />
 
       <div className="program-page">
         <ProgramList program={display} />
