@@ -12,12 +12,13 @@ import Tag from "./Tag";
 import Participant from "./Participant";
 import configData from "../config.json";
 import PropTypes from "prop-types";
-import EcoTwoToneIcon from '@material-ui/icons/EcoTwoTone';
-import NotAccessibleIcon from '@mui/icons-material/NotAccessible';
-import TranslateIcon from '@mui/icons-material/Translate';
-import HandshakeIcon from '@mui/icons-material/Handshake';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+import EcoTwoToneIcon from "@material-ui/icons/EcoTwoTone";
+import NotAccessibleIcon from "@mui/icons-material/NotAccessible";
+import TranslateIcon from "@mui/icons-material/Translate";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import EditIcon from "@mui/icons-material/Edit";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import { Tooltip } from "@mui/material";
 
 const ProgramItem = ({ item, forceExpanded }) => {
@@ -70,7 +71,9 @@ const ProgramItem = ({ item, forceExpanded }) => {
     );
 
   const tags = [];
-  const itemTags = item.tags.filter((tag => !configData.TAGS.DONTLIST.includes(tag.category)));
+  const itemTags = item.tags.filter(
+    (tag) => !configData.TAGS.DONTLIST.includes(tag.category)
+  );
   for (const tag of itemTags) {
     tags.push(<Tag key={tag.value} tag={tag.label} />);
   }
@@ -108,29 +111,150 @@ const ProgramItem = ({ item, forceExpanded }) => {
     });
   }
 
-  const iconColor = '--green-leaf-fill'; // Define a CSS variable
+  const iconColor = "--green-leaf-fill"; // Define a CSS variable
 
-  const greenLeaf = item.green_leaf == true ? <Tooltip title={<span style={{fontSize: "1rem"}}>Punkt przyjazny dla osób, które nigdy nie były na konwencie</span>} placement="top" arrow><EcoTwoToneIcon fontSize="large" style={{ color: `var(${iconColor})`}} /> </Tooltip>: '';
-  const access = item.handicap_friendly != true ? <Tooltip title={<span style={{fontSize: "1rem"}}>Punkt prowadzony w&nbsp;miejscu z&nbsp;utrudnionym dostępem dla osób z&nbsp;niepełnosprawnością ruchową</span>} placement="top" arrow><NotAccessibleIcon fontSize="large" /> </Tooltip>: '';
-  const sponsor = item.sponsored == true ? <Tooltip title={<span style={{fontSize: "1rem"}}>Punkt prowadzony przez jednego z&nbsp;naszych sponsorów</span>} placement="top" arrow><HandshakeIcon fontSize="large" /> </Tooltip>: '';
-  const translation = item.translated == true ? <Tooltip title={<span style={{fontSize: "1rem"}}>Punkt tłumaczony symultanicznie z&nbsp;języka angielskiego</span>} placement="top" arrow><TranslateIcon fontSize="large" /> </Tooltip> : '';
-  const keywords = item.keywords !== '' ? <div className="item-tags"> <b>{'Słowa kluczowe: '}</b>  {item.keywords}</div> : "";
-  const ageRestrictions = item.age_restrictions !== '' ? <div className="item-tags"><b>{'Ograniczenia wiekowe: '}</b>  {item.age_restrictions}</div> : "";
-  const triggers = item.triggers !== '' ? <div className="item-tags"><b>{'Triggery: '}</b>  {item.triggers}</div> : "";
-  const safetyTools = item.safety_tools !== '' ? <div className="item-tags"><b>{'BHS: '}</b>  {item.safety_tools}</div> : "";
-  const playersSection = item.max_players === '' && item.min_players === '' ? "" : <div className="item-tags"><b>{'Liczba graczy: '}</b> {item.min_players + ' - ' + item.max_players}</div>;
+  const greenLeaf =
+    item.green_leaf == true ? (
+      <Tooltip
+        disableFocusListener
+        title={
+          <span style={{ fontSize: "1rem" }}>
+            Punkt przyjazny dla osób, które nigdy nie były na konwencie
+          </span>
+        }
+        placement="top"
+        arrow
+      >
+        <EcoTwoToneIcon
+          fontSize="large"
+          style={{ color: `var(${iconColor})` }}
+        />{" "}
+      </Tooltip>
+    ) : (
+      ""
+    );
+  const access =
+    item.handicap_friendly != true ? (
+      <Tooltip
+        disableFocusListener
+        title={
+          <span style={{ fontSize: "1rem" }}>
+            Punkt prowadzony w&nbsp;miejscu z&nbsp;utrudnionym dostępem dla osób
+            z&nbsp;niepełnosprawnością ruchową
+          </span>
+        }
+        placement="top"
+        arrow
+      >
+        <NotAccessibleIcon fontSize="large" />{" "}
+      </Tooltip>
+    ) : (
+      ""
+    );
+  const sponsor =
+    item.sponsored == true ? (
+      <Tooltip
+        disableFocusListener
+        title={
+          <span style={{ fontSize: "1rem" }}>
+            Punkt prowadzony przez jednego z&nbsp;naszych sponsorów
+          </span>
+        }
+        placement="top"
+        arrow
+      >
+        <HandshakeIcon fontSize="large" />{" "}
+      </Tooltip>
+    ) : (
+      ""
+    );
+  const translation =
+    item.translated == true ? (
+      <Tooltip
+        disableFocusListener
+        title={
+          <span style={{ fontSize: "1rem" }}>
+            Punkt tłumaczony symultanicznie z&nbsp;języka angielskiego
+          </span>
+        }
+        placement="top"
+        arrow
+      >
+        <TranslateIcon fontSize="large" />{" "}
+      </Tooltip>
+    ) : (
+      ""
+    );
+  const signUp =
+    item.early_access == true ? (
+      <Tooltip
+        disableFocusListener
+        title={
+          <span style={{ fontSize: "1rem" }}>
+            Punkt z&nbsp;możliwościę wcześniejszego zapisania się
+          </span>
+        }
+        placement="top"
+        arrow
+      >
+        <EditIcon fontSize="large" />{" "}
+      </Tooltip>
+    ) : (
+      ""
+    );
+  const keywords =
+    item.keywords !== "" ? (
+      <div className="item-tags">
+        {" "}
+        <b>{"Słowa kluczowe: "}</b> {item.keywords}
+      </div>
+    ) : (
+      ""
+    );
+  const ageRestrictions =
+    item.age_restrictions !== "" ? (
+      <div className="item-tags">
+        <b>{"Ograniczenia wiekowe: "}</b> {item.age_restrictions}
+      </div>
+    ) : (
+      ""
+    );
+  const triggers =
+    item.triggers !== "" ? (
+      <div className="item-tags">
+        <b>{"Triggery: "}</b> {item.triggers}
+      </div>
+    ) : (
+      ""
+    );
+  const safetyTools =
+    item.safety_tools !== "" ? (
+      <div className="item-tags">
+        <b>{"BHS: "}</b> {item.safety_tools}
+      </div>
+    ) : (
+      ""
+    );
+  const playersSection =
+    item.max_players === "" && item.min_players === "" ? (
+      ""
+    ) : (
+      <div className="item-tags">
+        <b>{"Liczba graczy: "}</b> {item.min_players + " - " + item.max_players}
+      </div>
+    );
 
-
-  const startTime = item.dateAndTime
-    .withTimeZone(LocalTime.conventionTimeZone);
+  const startTime = item.dateAndTime.withTimeZone(LocalTime.conventionTimeZone);
   const endTime = startTime.add({ minutes: item.mins });
-  const endTimeStr = "Koniec o: " + endTime.toPlainTime().toString({ smallestUnit: 'minute' }) + ", ";
+  const endTimeStr =
+    "Koniec o: " +
+    endTime.toPlainTime().toString({ smallestUnit: "minute" }) +
+    ", ";
   const duration =
     configData.DURATION.SHOW_DURATION && item.mins ? (
       <div className="item-duration">
-        {
-          endTimeStr + configData.DURATION.DURATION_LABEL.replace("@mins", item.mins)
-        }
+        {endTimeStr +
+          configData.DURATION.DURATION_LABEL.replace("@mins", item.mins)}
       </div>
     ) : (
       ""
@@ -164,13 +288,15 @@ const ProgramItem = ({ item, forceExpanded }) => {
       <div className="item-selection">
         <div className="selection">
           <input
-            id={'select_' + id}
+            id={"select_" + id}
             type="checkbox"
             className="selection-control"
             checked={selected}
             onChange={handleSelected}
           />
-          <label htmlFor={'select_' + id}>{'Click to select ' + item.title}</label>
+          <label htmlFor={"select_" + id}>
+            {"Click to select " + item.title}
+          </label>
         </div>
       </div>
       <div className="item-group">
@@ -178,11 +304,14 @@ const ProgramItem = ({ item, forceExpanded }) => {
           <div className="item-title">
             {chevron}
             <Stack alignItems="center" direction="row">
-            {item.title}
-              {greenLeaf}
-              {access}
-              {sponsor}
-              {translation}
+              {item.title}
+              <Stack direction="row" style={{ marginLeft: "10px" }}>
+                {greenLeaf}
+                {access}
+                {sponsor}
+                {translation}
+                {signUp}
+              </Stack>
             </Stack>
           </div>
           <div className="item-line2">

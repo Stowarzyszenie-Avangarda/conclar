@@ -2,6 +2,7 @@ import EcoTwoToneIcon from "@material-ui/icons/EcoTwoTone";
 import NotAccessibleIcon from "@mui/icons-material/NotAccessible";
 import TranslateIcon from "@mui/icons-material/Translate";
 import { Handshake } from "@mui/icons-material";
+import {Edit} from '@mui/icons-material';
 
 const Legend = () => {
   const iconColor = "--green-leaf-fill"; // Define a CSS variable
@@ -58,6 +59,16 @@ const Legend = () => {
         >
           <Handshake fontSize="large" />
           {"punkty prowadzone przez naszych sponsorów."}
+        </li>
+        <li
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <Edit fontSize="large" />
+          {"punkty z możliwością wcześniejszego zapisu."}
         </li>
       </ul>
     </div>
