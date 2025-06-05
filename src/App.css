@@ -18,18 +18,25 @@
  * 1. Global application styles.
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap");
 
 :root {
   --main-bg: #f9fafa;
   --main-fg: #000;
-  --navigation-button-bg: #0A3E92;
-  --navigation-button-bg-gradient: linear-gradient(135deg,#0A3E92 0%,rgb(169,208,121) 100%);
+  --navigation-button-bg: #0a3e92;
+  --navigation-button-bg-gradient: linear-gradient(
+    135deg,
+    #0a3e92 0%,
+    rgb(169, 208, 121) 100%
+  );
   --navigation-button-fg: #fff; /*#0d172a;*/
   --navigation-button-border: #e2e8f0;
-  --navigation-button-current-bg: #0A3E92; /*#525e73; #343c4b;*/
-  --navigation-button-current-bg-gradient: linear-gradient(135deg,rgb(169,208,121) 0%, #0A3E92 100%); /*#525e73; #343c4b;*/
+  --navigation-button-current-bg: #0a3e92; /*#525e73; #343c4b;*/
+  --navigation-button-current-bg-gradient: linear-gradient(
+    135deg,
+    rgb(169, 208, 121) 0%,
+    #0a3e92 100%
+  ); /*#525e73; #343c4b;*/
   --navigation-button-current-fg: #fff;
   --navigation-button-hover-bg: #0979b9;
   --navigation-button-hover-fg: #fff;
@@ -39,7 +46,7 @@
   --filter-bg: var(--main-bg);
   --filter-fg: var(--main-fg);
   --filter-border: var(--search-border);
-  --filter-select-bg: #0A3E92;
+  --filter-select-bg: #0a3e92;
   --filter-select-fg: #fff;
   --search-bg: var(--main-bg);
   --search-fg: var(--main-fg);
@@ -57,16 +64,16 @@
   --add-more-button-bg: var(--navigation-button-current-bg);
   --add-more-button-fg: var(--navigation-button-current-fg);
   --program-item-chevron-collapsed: #ccc;
-  --program-item-chevron-expanded: #0A3E92;
-  --program-time-convention-message: #0A3E92;
-  --program-time-local-message: #0A3E92;
+  --program-item-chevron-expanded: #0a3e92;
+  --program-time-convention-message: #0a3e92;
+  --program-time-local-message: #0a3e92;
   --program-date-line: #888;
   --program-time-line: #ccc;
   --program-item-line: #bbb;
   --program-time-bg: #ddd;
   --program-tags-fg: #555;
   --program-expanded-bg: #eee;
-  --permalink-icon-fg: #0A3E92;
+  --permalink-icon-fg: #0a3e92;
   --permalink-icon-hover-fg: #0693e3;
   --participant-bg: #eee;
   --participant-link-fg: #000;
@@ -104,16 +111,15 @@ body {
   text-align: left;
   margin: 1rem;
   font-size: 1.25rem;
-  font-family: "Poppins", "Lato", "Helvetica Neue", "Calibri", Arial,
-    sans-serif;
+  font-family: "Poppins", "Lato", "Helvetica Neue", "Calibri", Arial, sans-serif;
 }
 
 a {
   color: var(--permalink-icon-fg);
-
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: var(--permalink-icon-hover-fg);
 }
 
@@ -147,7 +153,6 @@ header h1 {
 header img {
   border-radius: 1rem;
 }
-
 
 /*
  * 3. Navigation.
@@ -215,7 +220,7 @@ header img {
   color: var(--navigation-button-hover-fg);
 }
 
-li .MuiSvgIcon-root{
+li .MuiSvgIcon-root {
   margin-right: 1rem;
 }
 
@@ -236,18 +241,18 @@ li .MuiSvgIcon-root{
     margin-bottom: 0.5rem;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-    background:var(--program-time-bg);
+    background: var(--program-time-bg);
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     z-index: 1;
   }
 
-  .time-convention, .time-local {
+  .time-convention,
+  .time-local {
     display: inline;
     vertical-align: middle;
     margin-right: 0.5rem;
   }
-
 }
 
 /* page not founds */
@@ -270,7 +275,7 @@ div.switch-wrapper {
 }
 div.switch-wrapper label {
   max-height: 2em;
-  word-break:break-all;
+  word-break: break-all;
 }
 
 div.switch-wrapper,
@@ -433,9 +438,8 @@ input.switch:checked ~ label:after {
 }
 
 .filter-search input,
-.people-search input
-{
-  width:100%;
+.people-search input {
+  width: 100%;
   font-size: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -461,7 +465,7 @@ input.switch:checked ~ label:after {
 }
 
 .people-search {
-  max-width: 30ch;
+  width: 100%;
   margin: auto 0.25em;
 }
 
@@ -480,16 +484,15 @@ input.switch:checked ~ label:after {
 }
 
 .filter-expand button {
-    background-color: var(--expand-button-bg);
-    color: var(--expand-button-fg);
-    font-size: 0.85rem;
-    padding: .5rem 1.5rem;
-    border: none;
-    border-radius: 1.5rem;
-    margin-right: 0.5rem;
-    cursor: pointer;
+  background-color: var(--expand-button-bg);
+  color: var(--expand-button-fg);
+  font-size: 0.85rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
 }
-
 
 .filter-expand button:hover,
 .filter-expand button:focus {
@@ -512,7 +515,7 @@ input.switch:checked ~ label:after {
   background-color: var(--reset-button-bg);
   color: var(--reset-button-fg);
   font-size: 1rem;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 1.5rem;
   cursor: pointer;
@@ -801,7 +804,7 @@ input.switch:checked ~ label:after {
   background-color: var(--add-more-button-bg);
   color: var(--add-more-button-fg);
   font-size: 1rem;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 1.5rem;
 }
@@ -818,7 +821,7 @@ input.switch:checked ~ label:after {
   background-color: var(--add-all-button-bg);
   color: var(--add-all-button-fg);
   font-size: 1rem;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 1.5rem;
 }
@@ -842,7 +845,7 @@ input.switch:checked ~ label:after {
 
 .people ul {
   /* column-width: 25ch; */
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
@@ -909,7 +912,7 @@ input.switch:checked ~ label:after {
 }
 .person .person-image img {
   max-width: 100%;
-  height:auto;
+  height: auto;
 }
 
 .person .person-image:empty {

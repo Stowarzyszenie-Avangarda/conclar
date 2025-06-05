@@ -54,3 +54,8 @@
   color: white;
   background-color: #a2a3a5;
 }
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
