@@ -139,8 +139,7 @@ const ProgramItem = ({ item, forceExpanded }) => {
         disableFocusListener
         title={
           <span style={{ fontSize: "1rem" }}>
-            Punkt prowadzony w&nbsp;miejscu z&nbsp;utrudnionym dostępem dla osób
-            z&nbsp;niepełnosprawnością ruchową
+            Żeby dostać się do sali trzeba pokonać schody na 1. piętro. Brak windy dla osób na wózkach.
           </span>
         }
         placement="top"

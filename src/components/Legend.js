@@ -37,7 +37,7 @@ const Legend = () => {
         >
           <NotAccessibleIcon fontSize="large" />
           {
-            "punkty prowadzone w miejscu z utrudnionym dostępem dla osób z niepełnosprawnością ruchową"
+            "Żeby dostać się do sali trzeba pokonać schody na 1. piętro. Brak windy dla osób na wózkach."
           }
         </li>
         <li
