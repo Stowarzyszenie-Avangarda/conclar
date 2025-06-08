@@ -26,7 +26,7 @@ const Legend = () => {
             fontSize="large"
             style={{ color: `var(${iconColor})` }}
           />
-          {"punkty przyjazne dla osób, które nigdy nie były na konwencie."}
+          {"punkty przyjazne dla osób, które nigdy nie były na konwencie"}
         </li>
         <li
           style={{
@@ -37,7 +37,7 @@ const Legend = () => {
         >
           <NotAccessibleIcon fontSize="large" />
           {
-            "punkty prowadzone w miejscu z utrudnionym dostępem dla osób z niepełnosprawnością ruchową."
+            "punkty prowadzone w miejscu z utrudnionym dostępem dla osób z niepełnosprawnością ruchową"
           }
         </li>
         <li
@@ -48,7 +48,7 @@ const Legend = () => {
           }}
         >
           <TranslateIcon fontSize="large" />
-          {"punkty tłumaczone symultanicznie z języka angielskiego."}
+          {"punkty tłumaczone symultanicznie z języka angielskiego"}
         </li>
         <li
           style={{
@@ -58,7 +58,7 @@ const Legend = () => {
           }}
         >
           <Handshake fontSize="large" />
-          {"punkty prowadzone przez naszych sponsorów."}
+          {"punkty prowadzone przez naszych sponsorów"}
         </li>
         <li
           style={{
@@ -68,7 +68,7 @@ const Legend = () => {
           }}
         >
           <Edit fontSize="large" />
-          {"punkty z możliwością wcześniejszego zapisu."}
+          {"punkty z możliwością wcześniejszego zapisu"}
         </li>
       </ul>
     </div>
