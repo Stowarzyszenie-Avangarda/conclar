@@ -97,7 +97,7 @@
       "SEARCHABLE": false,
       "HIDE": false
     },
-    "DONTLIST": ["Division", "days"]
+    "DONTLIST": ["Division", "days", "place"]
   },
   "FILTER": {
     "RESET": {
