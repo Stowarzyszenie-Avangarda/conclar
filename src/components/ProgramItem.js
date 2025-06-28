@@ -190,7 +190,7 @@ const ProgramItem = ({ item, forceExpanded }) => {
         disableFocusListener
         title={
           <span style={{ fontSize: "1rem" }}>
-            Punkt z&nbsp;możliwościę wcześniejszego zapisania się
+            Punkt z&nbsp;możliwością wcześniejszego zapisania się
           </span>
         }
         placement="top"

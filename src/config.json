@@ -38,7 +38,7 @@
   },
   "APPLICATION": {
     "LOADING": {
-      "MESSAGE": "Bazyliszek odczytuje program, ale nie umie czytać. Czekaj cierpliwie..."
+      "MESSAGE": "Bazyliszek odczytuje program, ale nie umie czytać. Czekaj cierpliwie... Jeżeli trwa to bardzo długo spróbuj wyczyścić ciasteczka i cache lub użyć trybu incognito."
     }
   },
   "PROGRAM": {
