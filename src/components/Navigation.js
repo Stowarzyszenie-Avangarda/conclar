@@ -27,9 +27,6 @@ const Navigation = () => {
         <li>
           <NavLink to="/info">{configData.NAVIGATION.INFO}</NavLink>
         </li>
-        <li>
-          <NavLink to="/settings">{configData.NAVIGATION.SETTINGS}</NavLink>
-        </li>
         {extraLinks}
       </ul>
     </nav>
