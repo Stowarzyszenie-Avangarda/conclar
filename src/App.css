@@ -872,6 +872,7 @@ input.switch:checked ~ label:after {
   max-width: 30%;
   padding: 0.5rem;
   text-align: center;
+  align-content: center;
   background: var(--participant-bg);
 }
 

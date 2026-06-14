@@ -31,7 +31,7 @@
     "MYSCHEDULE": "Mój harmonogram",
     "INFO": "Punkt info",
     "SETTINGS": "Ustawienia",
-    "EXTRA": [{ "LABEL": "Strona konwentu", "URL": "https://bazyliszek.ava.waw.pl" },{ "LABEL": "Stan Zapisów", "URL": "https://bazyliszek.ava.waw.pl" }]
+    "EXTRA": [{ "LABEL": "Strona konwentu", "URL": "https://bazyliszek.ava.waw.pl" }]
   },
   "LOCATIONS": {
     "SEARCHABLE": true
